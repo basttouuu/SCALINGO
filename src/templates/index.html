@@ -1,0 +1,625 @@
+﻿{{ define "index" }}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Portfolio de Hugo Paulier - étudiant en informatique YNOV, développeur web et cré©©ateur de contenu gaming/tech. Découvrez mes projets et compétences.">
+    <meta name="keywords" content="Hugo Paulier, développeur, portfolio, YNOV, informatique, gaming, tech">
+    <meta name="author" content="Hugo Paulier">
+    <meta name="theme-color" content="#ffd700">
+    <meta property="og:title" content="Portfolio - Hugo Paulier">
+    <meta property="og:description" content="Étudiant en informatique, développeur et créateur de contenu">
+    <meta property="og:type" content="website">
+    <title>Portfolio - Hugo Paulier | Développeur & créateur de Contenu</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <style>*{margin:0;padding:0;box-sizing:border-box}html{font-size:65%;scroll-behavior:smooth}body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden}header{position:fixed;top:0;left:0;right:0;padding:2rem 9%;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);z-index:1000;display:flex;justify-content:space-between;align-items:center}.logo{font-size:3rem;color:#ffd700;font-weight:800}.home{min-height:100vh;padding:10rem 9% 2rem;display:flex;align-items:center;gap:8rem}.home-content h1{font-size:5.6rem;font-weight:700;line-height:1.2}img{max-width:100%;height:auto}</style>
+    <link rel="preload" href="/static/img/profil1.png" as="image" fetchpriority="high">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" fetchpriority="low">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+</head>
+<body>
+    <a href="#home" class="skip-to-content">Aller au contenu principal</a>
+    <header>
+        <a href="#home" class="logo">Hugo</a>
+        <nav>
+            <a href="#home" class="active">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#services">Services</a>
+            <a href="#skills">Compétences</a>
+            <a href="#projects">Projets</a>
+            <a href="/todo">To-Do</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button id="menu-icon" class="fas fa-bars" aria-label="Ouvrir le menu de navigation" aria-expanded="false"></button>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème de couleur">
+            <i class="fas fa-moon"></i>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1 class="fade-in">Salut ! Moi c'est <span>Hugo</span></h1>
+            <h2 class="typing-text">Je suis <span></span></h2>
+            <p class="fade-in">étudiant passionné d'informatique à YNOV, créateur de contenu gaming/tech et bidouilleur de code. J'aime créer des trucs cool et partager ça avec ma communauté !</p>
+            <div class="social-icons fade-in">
+                <a href="https://www.linkedin.com/in/hugo-paulier-89896939a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/basttouuu" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/hoohohahaa" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@bastouuu1" target="_blank" rel="noopener noreferrer" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="btn-group fade-in">
+                <a href="#contact" class="btn">Me Contacter</a>
+                <a href="/static/cv.txt" class="btn btn-secondary" download>
+                    <i class="fas fa-download"></i> Télécharger CV
+                </a>
+            </div>
+        </div>
+        <div class="home-img fade-in">
+            <img src="/static/img/profil1.png" alt="Photo de profil Hugo Paulier" loading="eager" width="500" height="500" fetchpriority="high">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="heading">Qui suis-je <span>?</span></h2>
+        <div class="about-container">
+            <div class="about-content">
+                <h3>Hey, ravi de te rencontrer !</h3>
+                <p>
+                    Je m'appelle <strong>Hugo Paulier</strong>, mais tu peux m'appeler <strong>Bastou</strong> ! 
+                    Je suis étudiant en informatique à <strong>YNOV Campus</strong> et créateur de contenu sur YouTube/Twitch.
+                </p>
+                <p>
+                    Mon parcours ? Un peu atypique ! J'ai d'abord tenté médecine (PASS option mécanique), mais j'ai vite compris que 
+                    ma vraie passion, c'était de <strong>créer des trucs avec du code</strong> et de <strong>partager ça avec le monde</strong> 🚀
+                </p>
+                <p>
+                    Depuis le lycée, je suis autodidacte : YouTube, Reddit, freeCodeCamp... tout y passe ! 
+                    J'apprends en faisant, en testant, et parfois en cassant des trucs (c'est comme ça qu'on apprend le mieux 😅).
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Formation</h4>
+                        <p>Bachelor Informatique @ YNOV</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-code"></i>
+                        <h4>Passion</h4>
+                        <p>Dev, Gaming & IA</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-video"></i>
+                        <h4>Contenu</h4>
+                        <p>YouTube & Twitch</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Philosophie</h4>
+                        <p>Apprendre en créant</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image" role="img" aria-live="polite">
+                <img src="/static/img/profil1.png" alt="Hugo - Profil" class="profile-carousel" width="400" height="400" loading="lazy" fetchpriority="low">
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>5+</h3>
+                        <p>Projets</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-users"></i>
+                        <h3>100+</h3>
+                        <p>Followers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-fun-facts">
+            <h3>Fun Facts</h3>
+            <div class="fun-facts-grid">
+                <div class="fun-fact">
+                    <div class="fact-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="fact-content">
+                        <h4>Plot Twist</h4>
+                        <p>J'ai fait médecine avant l'info</p>
+                    </div>
+                </div>
+                <div class="fun-fact">
+                    <div class="fact-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="fact-content">
+                        <h4>UnderWorld</h4>
+                        <p>Mon jeu créé à YNOV</p>
+                    </div>
+                </div>
+                <div class="fun-fact">
+                    <div class="fact-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="fact-content">
+                        <h4>IA Perso</h4>
+                        <p>Je code mon assistant intelligent</p>
+                    </div>
+                </div>
+                <div class="fun-fact">
+                    <div class="fact-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <div class="fact-content">
+                        <h4>Tech depuis 9 ans</h4>
+                        <p>Montage & réparation PC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="heading">Mes <span>Services</span></h2>
+        <div class="services-container">
+            <div class="service-box">
+                <i class="fas fa-code"></i>
+                <h3>Développement Web</h3>
+                <p>Je crée des sites web qui claquent ! Du design responsive au code propre, je m'occupe de tout pour donner vie à tes idées </p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-gamepad"></i>
+                <h3>Développement Jeux</h3>
+                <p>Tu veux créer un jeu ? De l'idée au prototype jouable, je transforme tes concepts en expériences gaming fun ! </p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-palette"></i>
+                <h3>Design UI/UX</h3>
+                <p>Je rends tes interfaces belles ET faciles à utiliser. Parce qu'un bon design, c'est quand ça marche sans notice ! </p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-video"></i>
+                <h3>création de Contenu</h3>
+                <p>Gaming, tech, tutos... Je partage ma passion en vidéo sur YouTube et Twitch. Viens traîner avec moi ! </p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-robot"></i>
+                <h3>Projets IA</h3>
+                <p>L'IA c'est pas que pour les films ! Je crée des solutions intelligentes pour simplifier ton quotidien </p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Apps Sur Mesure</h3>
+                <p>Besoin d'un outil spécifique ? Je code des programmes qui font exactement ce dont tu as besoin ! </p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-computer"></i>
+                <h3>Montage PC</h3>
+                <p>Je monte, upgrade et répare des PC. Ton setup de rêve ? Je peux t'aider à le construire ! </p>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="heading">Mes <span>Compétences</span></h2>
+        <div class="skills-intro">
+            <p>Voici un aperçu de mes compétences développées à travers mes projets et mon apprentissage autodidacte</p>
+        </div>
+        <div class="skills-grid">
+            <!-- Outils & Frameworks -->
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-tools"></i>
+                    <h3>Outils</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Git/GitHub</h4>
+                            <p>Gestion de versions et collaboration</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-node"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Node.js</h4>
+                            <p>Développement backend JavaScript</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Bases de données</h4>
+                            <p>SQL et gestion de données</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Linux/CLI</h4>
+                            <p>Administration système et scripts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Langages de programmation -->
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-code"></i>
+                    <h3>Langages</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>HTML/CSS</h4>
+                            <p>Structure et design de pages web</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>JavaScript</h4>
+                            <p>Interactivité et dynamisme</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Python</h4>
+                            <p>Développement et automatisation</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Golang</h4>
+                            <p>Applications performantes</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Java</h4>
+                            <p>Programmation orientée objet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-users"></i>
+                    <h3>Soft Skills</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Travail d'équipe</h4>
+                            <p>Collaboration et coordination</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>créativité</h4>
+                            <p>Innovation et résolution de problèmes</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Communication</h4>
+                            <p>Échange d'idées et présentation</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Gestion du temps</h4>
+                            <p>Organisation et priorisation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="heading">Mes <span>Projets</span></h2>
+        <p class="projects-intro">Découvre mes créations ! De mes jeux aux projets web, en passant par l'IA</p>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all" aria-label="Afficher tous les projets">
+                <i class="fas fa-th"></i>
+                <span>Tous</span>
+            </button>
+            <button class="filter-btn" data-filter="Games" aria-label="Filtrer les projets Games">
+                <i class="fas fa-gamepad"></i>
+                <span>Games</span>
+            </button>
+            <button class="filter-btn" data-filter="web" aria-label="Filtrer les projets Web">
+                <i class="fas fa-globe"></i>
+                <span>Web</span>
+            </button>
+            <button class="filter-btn" data-filter="ia" aria-label="Filtrer les projets IA">
+                <i class="fas fa-robot"></i>
+                <span>IA</span>
+            </button>
+        </div>
+        <div class="projects-container">
+            <div class="project-card" data-category="Games">
+                <div class="project-image">
+                    <img src="/static/img/project1.png" alt="UnderWorld Game" loading="lazy" width="400" height="250">
+                    <div class="project-overlay">
+                        <span class="project-badge games">Game</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4>UnderWorld</h4>
+                    <p>Mon premier vrai jeu ! créé à YNOV, c'est un projet dont je suis super fier. Explore, combat, survie !</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pygame</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/basttouuu/UNDERWORLD---ALPHA-VERSION" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <img src="/static/img/project2.png" alt="Sites Web" loading="lazy" width="400" height="250">
+                    <div class="project-overlay">
+                        <span class="project-badge web">Web</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4>Sites Web</h4>
+                    <p>ChillGames, SME Esport... Des sites complets avec design moderne et fonctionnalités custom !</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://steel-mentality-479c08687e3d.herokuapp.com/" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            <i class="fas fa-external-link-alt"></i> Live
+                        </a>
+                        <a href="https://github.com/basttouuu/TP-HTML" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="ia">
+                <div class="project-image">
+                    <img src="/static/img/project3.jpg" alt="Assistant IA" loading="lazy" width="400" height="250">
+                    <div class="project-overlay">
+                        <span class="project-badge ia">IA</span>
+                        <span class="project-status">En cours</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4>Mon Assistant IA</h4>
+                    <p>En cours ! Je bosse sur mon propre assistant intelligent. Objectif : qu'il gé©¨re tout mon quotidien !</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">AI/ML</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/basttouuu/Projet_IA_fr" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="design">
+                <div class="project-image">
+                    <img src="/static/img/project4.png" alt="Projet Secret" loading="lazy" width="400" height="250">
+                    <div class="project-overlay">
+                        <span class="project-badge design">Hardware</span>
+                        <span class="project-status">Bientôt</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h4>Projet Secret</h4>
+                    <p>Un truc cool en électronique/méca arrive bientôt... Stay tuned !</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Hardware</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-btn disabled">
+                            <i class="fas fa-lock"></i> Bientôt
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Me <span>Contacter</span></h2>
+        <p class="contact-intro">Une question, un projet ou juste envie de discuter ? N'hésite pas à me contacter !</p>
+        
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>hugo.paulier@ynov.com</p>
+                        <a href="mailto:hugo.paulier@ynov.com" class="info-link">M'envoyer un email</a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Localisation</h3>
+                        <p>Aix-en-Provence, France</p>
+                        <span class="info-detail">Disponible en remote</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Réseaux sociaux</h3>
+                        <p>Suis-moi sur mes différentes plateformes</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/hugo-paulier-89896939a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/basttouuu" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.youtube.com/@bastouuu1" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://x.com/hoohohahaa" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card highlight">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Disponibilité</h3>
+                        <p>Lun - Ven : 9h - 18h</p>
+                        <span class="status-badge online">Disponible</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <div class="form-header">
+                    <h3>Envoyez-moi un message</h3>
+                    <p>Remplissez le formulaire et je vous répondrai dans les 24h</p>
+                </div>
+                
+                <form id="contact-form" class="contact-form" aria-label="Formulaire de contact">
+                    <div class="input-row">
+                        <div class="input-box">
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Nom complet
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" autocomplete="name" required>
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        <div class="input-box">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" autocomplete="email" required>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-box">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i>
+                                Téléphone (optionnel)
+                            </label>
+                            <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" autocomplete="tel">
+                            <span class="error-message" id="phone-error"></span>
+                        </div>
+                        <div class="input-box">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Sujet
+                            </label>
+                            <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+                            <span class="error-message" id="subject-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-box full-width">
+                        <label for="message">
+                            <i class="fas fa-comment-dots"></i>
+                            Message
+                        </label>
+                        <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
+                        <span class="error-message" id="message-error"></span>
+                        <span class="char-count">
+                            <span id="char-counter">0</span>/1000 caractères
+                        </span>
+                    </div>
+                    
+                    <button type="submit" class="btn submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Envoyer le message
+                    </button>
+                    
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Hugo Paulier. Tous droits réservés.</p>
+            <div class="visit-counter">
+                <i class="fas fa-eye"></i>
+                <span id="visit-count">0</span> visites
+            </div>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/hugo-paulier-89896939a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/Bastou81" target="_blank" rel="noopener noreferrer" aria-label="Visitez mon profil GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/hoohohahaa" target="_blank" rel="noopener noreferrer" aria-label="Suivez-moi sur Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bastouuu1" target="_blank" rel="noopener noreferrer" aria-label="Abonnez-vous é©  ma chaé©®ne YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js" defer></script>
+</body>
+</html>
+{{ end }}
+
+
