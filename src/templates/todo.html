@@ -3,34 +3,22 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="To-Do List - Portfolio de Hugo Paulier">
-    <meta name="keywords" content="Hugo Paulier, développeur, portfolio, YNOV, to-do list">
-    <meta name="author" content="Hugo Paulier">
-    <meta name="theme-color" content="#ffd700">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List - Hugo Paulier</title>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <style>*{margin:0;padding:0;box-sizing:border-box}html{font-size:65%;scroll-behavior:smooth}body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden}header{position:fixed;top:0;left:0;right:0;padding:2rem 9%;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);z-index:1000;display:flex;justify-content:space-between;align-items:center}.logo{font-size:3rem;color:#ffd700;font-weight:800}</style>
     <link rel="stylesheet" href="/static/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" fetchpriority="low">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
         <a href="/" class="logo">Hugo</a>
         <nav>
             <a href="/">Accueil</a>
-            <a href="/#about">À propos</a>
+            <a href="/#about">A propos</a>
             <a href="/#services">Services</a>
-            <a href="/#skills">Compétences</a>
+            <a href="/#skills">Competences</a>
             <a href="/#projects">Projets</a>
             <a href="/#contact">Contact</a>
         </nav>
-        <button id="menu-icon" class="fas fa-bars" aria-label="Ouvrir le menu de navigation" aria-expanded="false"></button>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème de couleur">
-            <i class="fas fa-moon"></i>
-        </button>
     </header>
 
     <section class="todo-section" style="min-height: 100vh; padding: 12rem 9% 4rem;">
@@ -39,25 +27,24 @@
                 <h1 style="font-size: 4.5rem; margin-bottom: 1rem; color: #ffd700;">
                     <i class="fas fa-tasks"></i> Ma To-Do List
                 </h1>
-                <p style="font-size: 1.6rem; color: #ccc;">Gérez vos tâches et suivez votre progression</p>
+                <p style="font-size: 1.6rem; color: #ccc;">Sans JavaScript - Pure HTML et Go</p>
             </div>
 
-            <!-- Add Task Form -->
-            <div class="add-task-container" style="background: rgba(255, 255, 255, 0.05); padding: 3rem; border-radius: 2rem; backdrop-filter: blur(10px); margin-bottom: 3rem;">
+            <div class="add-task-container" style="background: rgba(255, 255, 255, 0.05); padding: 3rem; border-radius: 2rem; margin-bottom: 3rem;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: #ffd700;">
-                    <i class="fas fa-plus-circle"></i> Ajouter une tâche
+                    <i class="fas fa-plus-circle"></i> Ajouter une tache
                 </h2>
-                <form id="add-task-form" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                <form action="/todo/add" method="POST" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
                     <input 
                         type="text" 
-                        id="task-input" 
-                        placeholder="Nouvelle tâche..." 
+                        name="text" 
+                        placeholder="Nouvelle tache..." 
                         required
                         style="flex: 1; min-width: 250px; padding: 1.5rem; font-size: 1.6rem; border-radius: 1rem; border: 2px solid #ffd700; background: rgba(255, 255, 255, 0.1); color: #fff;"
                     >
                     <select 
-                        id="task-priority" 
-                        style="padding: 1.5rem; font-size: 1.6rem; border-radius: 1rem; border: 2px solid #ffd700; background: rgba(255, 255, 255, 0.1); color: #fff; cursor: pointer;"
+                        name="priority" 
+                        style="padding: 1.5rem; font-size: 1.6rem; border-radius: 1rem; border: 2px solid #ffd700; background: rgba(255, 255, 255, 0.1); color: #fff;"
                     >
                         <option value="low">Basse</option>
                         <option value="medium" selected>Moyenne</option>
@@ -65,301 +52,93 @@
                     </select>
                     <button 
                         type="submit" 
-                        style="padding: 1.5rem 3rem; font-size: 1.6rem; font-weight: 600; border-radius: 1rem; border: none; background: linear-gradient(90deg, #ffd700, #ffed4e); color: #0a0a0a; cursor: pointer; transition: all 0.3s ease;"
+                        style="padding: 1.5rem 3rem; font-size: 1.6rem; font-weight: 600; border-radius: 1rem; border: none; background: linear-gradient(90deg, #ffd700, #ffed4e); color: #0a0a0a; cursor: pointer;"
                     >
                         <i class="fas fa-plus"></i> Ajouter
                     </button>
                 </form>
             </div>
 
-            <!-- Filter Buttons -->
-            <div class="filter-container" style="display: flex; gap: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap; justify-content: center;">
-                <button class="filter-btn active" data-filter="all" style="padding: 1rem 2rem; font-size: 1.5rem; border-radius: 1rem; border: 2px solid #ffd700; background: #ffd700; color: #0a0a0a; cursor: pointer; transition: all 0.3s ease;">
-                    <i class="fas fa-list"></i> Toutes
-                </button>
-                <button class="filter-btn" data-filter="active" style="padding: 1rem 2rem; font-size: 1.5rem; border-radius: 1rem; border: 2px solid #ffd700; background: transparent; color: #ffd700; cursor: pointer; transition: all 0.3s ease;">
-                    <i class="fas fa-circle"></i> Actives
-                </button>
-                <button class="filter-btn" data-filter="completed" style="padding: 1rem 2rem; font-size: 1.5rem; border-radius: 1rem; border: 2px solid #ffd700; background: transparent; color: #ffd700; cursor: pointer; transition: all 0.3s ease;">
-                    <i class="fas fa-check-circle"></i> Terminées
-                </button>
-                <button class="filter-btn" data-filter="high" style="padding: 1rem 2rem; font-size: 1.5rem; border-radius: 1rem; border: 2px solid #ff4444; background: transparent; color: #ff4444; cursor: pointer; transition: all 0.3s ease;">
-                    <i class="fas fa-exclamation-circle"></i> Haute priorité
-                </button>
+            {{ if .Tasks }}
+            <div class="tasks-list" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                {{ range .Tasks }}
+                <div class="task-item" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 1.5rem; border-left: 4px solid {{ if eq .Priority "high" }}#ff4444{{ else if eq .Priority "medium" }}#ffd700{{ else }}#4ade80{{ end }}; display: flex; align-items: center; gap: 1.5rem; {{ if .Completed }}opacity: 0.6;{{ end }}">
+                    
+                    <form action="/todo/toggle" method="POST" style="margin: 0;">
+                        <input type="hidden" name="id" value="{{ .ID }}">
+                        <button type="submit" style="width: 3rem; height: 3rem; border-radius: 50%; border: 2px solid {{ if eq .Priority "high" }}#ff4444{{ else if eq .Priority "medium" }}#ffd700{{ else }}#4ade80{{ end }}; background: {{ if .Completed }}{{ if eq .Priority "high" }}#ff4444{{ else if eq .Priority "medium" }}#ffd700{{ else }}#4ade80{{ end }}{{ else }}transparent{{ end }}; color: #0a0a0a; cursor: pointer;">
+                            {{ if .Completed }}<i class="fas fa-check" style="font-size: 1.4rem;"></i>{{ end }}
+                        </button>
+                    </form>
+
+                    <div style="flex: 1;">
+                        <p style="font-size: 1.8rem; {{ if .Completed }}text-decoration: line-through; color: #999;{{ else }}color: #fff;{{ end }}">{{ .Text }}</p>
+                        <div style="display: flex; gap: 1.5rem; margin-top: 0.5rem; font-size: 1.3rem; color: #999;">
+                            <span><i class="fas fa-flag" style="color: {{ if eq .Priority "high" }}#ff4444{{ else if eq .Priority "medium" }}#ffd700{{ else }}#4ade80{{ end }};"></i> 
+                                {{ if eq .Priority "high" }}Haute{{ else if eq .Priority "medium" }}Moyenne{{ else }}Basse{{ end }}
+                            </span>
+                            <span><i class="fas fa-clock"></i> {{ .CreatedAt }}</span>
+                        </div>
+                    </div>
+
+                    <form action="/todo/delete" method="POST" style="margin: 0;">
+                        <input type="hidden" name="id" value="{{ .ID }}">
+                        <button type="submit" style="padding: 1rem 1.5rem; border-radius: 1rem; border: 2px solid #ff4444; background: transparent; color: #ff4444; cursor: pointer;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
+                </div>
+                {{ end }}
             </div>
 
-            <!-- Tasks List -->
-            <div class="tasks-list" id="tasks-list" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                <!-- Tasks will be added here dynamically -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <form action="/todo/clear" method="POST" style="display: inline;">
+                    <button 
+                        type="submit"
+                        onclick="return confirm('Voulez-vous vraiment supprimer toutes les taches ?')"
+                        style="padding: 1.5rem 3rem; font-size: 1.6rem; font-weight: 600; border-radius: 1rem; border: 2px solid #ff4444; background: transparent; color: #ff4444; cursor: pointer;"
+                    >
+                        <i class="fas fa-trash-alt"></i> Supprimer toutes les taches
+                    </button>
+                </form>
             </div>
 
-            <!-- Empty State -->
-            <div id="empty-state" style="text-align: center; padding: 4rem; background: rgba(255, 255, 255, 0.05); border-radius: 2rem; margin-top: 2rem;">
+            {{ else }}
+            <div style="text-align: center; padding: 4rem; background: rgba(255, 255, 255, 0.05); border-radius: 2rem;">
                 <i class="fas fa-inbox" style="font-size: 6rem; color: #ffd700; margin-bottom: 2rem; opacity: 0.5;"></i>
-                <p style="font-size: 2rem; color: #999;">Aucune tâche pour le moment</p>
-                <p style="font-size: 1.6rem; color: #666; margin-top: 1rem;">Ajoutez votre première tâche ci-dessus !</p>
+                <p style="font-size: 2rem; color: #999;">Aucune tache pour le moment</p>
+                <p style="font-size: 1.6rem; color: #666; margin-top: 1rem;">Ajoutez votre premiere tache ci-dessus !</p>
             </div>
+            {{ end }}
 
-            <!-- Stats -->
             <div class="stats-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="stat-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 1.5rem; text-align: center; border: 2px solid #ffd700;">
                     <i class="fas fa-tasks" style="font-size: 3rem; color: #ffd700; margin-bottom: 1rem;"></i>
-                    <p style="font-size: 3rem; font-weight: 700; color: #ffd700;" id="total-tasks">0</p>
+                    <p style="font-size: 3rem; font-weight: 700; color: #ffd700;">{{ len .Tasks }}</p>
                     <p style="font-size: 1.4rem; color: #ccc;">Total</p>
                 </div>
                 <div class="stat-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 1.5rem; text-align: center; border: 2px solid #4ade80;">
                     <i class="fas fa-check-circle" style="font-size: 3rem; color: #4ade80; margin-bottom: 1rem;"></i>
-                    <p style="font-size: 3rem; font-weight: 700; color: #4ade80;" id="completed-tasks">0</p>
-                    <p style="font-size: 1.4rem; color: #ccc;">Terminées</p>
+                    <p style="font-size: 3rem; font-weight: 700; color: #4ade80;">
+                        {{ $completed := 0 }}
+                        {{ range .Tasks }}{{ if .Completed }}{{ $completed = add $completed 1 }}{{ end }}{{ end }}
+                        {{ $completed }}
+                    </p>
+                    <p style="font-size: 1.4rem; color: #ccc;">Terminees</p>
                 </div>
                 <div class="stat-card" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 1.5rem; text-align: center; border: 2px solid #60a5fa;">
                     <i class="fas fa-clock" style="font-size: 3rem; color: #60a5fa; margin-bottom: 1rem;"></i>
-                    <p style="font-size: 3rem; font-weight: 700; color: #60a5fa;" id="pending-tasks">0</p>
+                    <p style="font-size: 3rem; font-weight: 700; color: #60a5fa;">
+                        {{ $pending := 0 }}
+                        {{ range .Tasks }}{{ if not .Completed }}{{ $pending = add $pending 1 }}{{ end }}{{ end }}
+                        {{ $pending }}
+                    </p>
                     <p style="font-size: 1.4rem; color: #ccc;">En cours</p>
                 </div>
-            </div>
-
-            <!-- Clear All Button -->
-            <div style="text-align: center; margin-top: 3rem;">
-                <button 
-                    id="clear-all-btn"
-                    style="padding: 1.5rem 3rem; font-size: 1.6rem; font-weight: 600; border-radius: 1rem; border: 2px solid #ff4444; background: transparent; color: #ff4444; cursor: pointer; transition: all 0.3s ease;"
-                >
-                    <i class="fas fa-trash-alt"></i> Supprimer toutes les tâches
-                </button>
             </div>
         </div>
     </section>
 
-    <script>
-        // Task Manager
-        class TaskManager {
-            constructor() {
-                this.tasks = [];
-                this.currentFilter = 'all';
-                this.init();
-            }
-
-            async init() {
-                await this.loadTasks();
-                this.setupEventListeners();
-            }
-
-            async loadTasks() {
-                try {
-                    const response = await fetch('/api/tasks');
-                    if (response.ok) {
-                        this.tasks = await response.json();
-                        this.renderTasks();
-                        this.updateStats();
-                    }
-                } catch (error) {
-                    console.error('Erreur chargement tâches:', error);
-                }
-            }
-
-            setupEventListeners() {
-                document.getElementById('add-task-form').addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    this.addTask();
-                });
-
-                // Filter buttons
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        document.querySelectorAll('.filter-btn').forEach(b => {
-                            b.style.background = 'transparent';
-                            b.style.color = b.dataset.filter === 'high' ? '#ff4444' : '#ffd700';
-                        });
-                        btn.style.background = btn.dataset.filter === 'high' ? '#ff4444' : '#ffd700';
-                        btn.style.color = '#0a0a0a';
-                        this.currentFilter = btn.dataset.filter;
-                        this.renderTasks();
-                    });
-                });
-
-                // Clear all button
-                document.getElementById('clear-all-btn').addEventListener('click', () => {
-                    if (confirm('Voulez-vous vraiment supprimer toutes les tâches ?')) {
-                        this.clearAll();
-                    }
-                });
-            }
-
-            async addTask() {
-                const input = document.getElementById('task-input');
-                const priority = document.getElementById('task-priority').value;
-                
-                if (input.value.trim() === '') return;
-
-                const task = {
-                    id: Date.now(),
-                    text: input.value.trim(),
-                    priority: priority,
-                    completed: false,
-                    createdAt: new Date().toISOString()
-                };
-
-                try {
-                    const response = await fetch('/api/tasks', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(task)
-                    });
-
-                    if (response.ok) {
-                        await this.loadTasks();
-                        input.value = '';
-                    }
-                } catch (error) {
-                    console.error('Erreur ajout tâche:', error);
-                }
-            }
-
-            async deleteTask(id) {
-                try {
-                    const response = await fetch('/api/tasks/', {
-                        method: 'DELETE',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ id: id })
-                    });
-
-                    if (response.ok) {
-                        await this.loadTasks();
-                    }
-                } catch (error) {
-                    console.error('Erreur suppression tâche:', error);
-                }
-            }
-
-            async toggleTask(id) {
-                const task = this.tasks.find(task => task.id === id);
-                if (task) {
-                    task.completed = !task.completed;
-                    
-                    try {
-                        const response = await fetch('/api/tasks/', {
-                            method: 'PUT',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(task)
-                        });
-
-                        if (response.ok) {
-                            this.renderTasks();
-                            this.updateStats();
-                        }
-                    } catch (error) {
-                        console.error('Erreur mise à jour tâche:', error);
-                    }
-                }
-            }
-
-            async clearAll() {
-                try {
-                    const response = await fetch('/api/tasks/clear', {
-                        method: 'DELETE'
-                    });
-
-                    if (response.ok) {
-                        await this.loadTasks();
-                    }
-                } catch (error) {
-                    console.error('Erreur suppression tâches:', error);
-                }
-            }
-
-            getFilteredTasks() {
-                switch(this.currentFilter) {
-                    case 'active':
-                        return this.tasks.filter(task => !task.completed);
-                    case 'completed':
-                        return this.tasks.filter(task => task.completed);
-                    case 'high':
-                        return this.tasks.filter(task => task.priority === 'high');
-                    default:
-                        return this.tasks;
-                }
-            }
-
-            renderTasks() {
-                const tasksList = document.getElementById('tasks-list');
-                const emptyState = document.getElementById('empty-state');
-                const filteredTasks = this.getFilteredTasks();
-
-                if (filteredTasks.length === 0) {
-                    tasksList.style.display = 'none';
-                    emptyState.style.display = 'block';
-                } else {
-                    tasksList.style.display = 'flex';
-                    emptyState.style.display = 'none';
-                }
-
-                tasksList.innerHTML = filteredTasks.map(task => this.createTaskHTML(task)).join('');
-
-                // Add event listeners to task buttons
-                document.querySelectorAll('.toggle-task').forEach(btn => {
-                    btn.addEventListener('click', () => this.toggleTask(parseInt(btn.dataset.id)));
-                });
-
-                document.querySelectorAll('.delete-task').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        if (confirm('Supprimer cette tâche ?')) {
-                            this.deleteTask(parseInt(btn.dataset.id));
-                        }
-                    });
-                });
-            }
-
-            createTaskHTML(task) {
-                const priorityColors = {
-                    low: '#4ade80',
-                    medium: '#ffd700',
-                    high: '#ff4444'
-                };
-
-                const priorityLabels = {
-                    low: 'Basse',
-                    medium: 'Moyenne',
-                    high: 'Haute'
-                };
-
-                return `
-                    <div class="task-item" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 1.5rem; backdrop-filter: blur(10px); border-left: 4px solid ${priorityColors[task.priority]}; display: flex; align-items: center; gap: 1.5rem; ${task.completed ? 'opacity: 0.6;' : ''}">
-                        <button class="toggle-task" data-id="${task.id}" style="width: 3rem; height: 3rem; border-radius: 50%; border: 2px solid ${priorityColors[task.priority]}; background: ${task.completed ? priorityColors[task.priority] : 'transparent'}; color: #0a0a0a; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
-                            ${task.completed ? '<i class="fas fa-check" style="font-size: 1.4rem;"></i>' : ''}
-                        </button>
-                        <div style="flex: 1;">
-                            <p style="font-size: 1.8rem; ${task.completed ? 'text-decoration: line-through; color: #999;' : 'color: #fff;'}">${task.text}</p>
-                            <div style="display: flex; gap: 1.5rem; margin-top: 0.5rem; font-size: 1.3rem; color: #999;">
-                                <span><i class="fas fa-flag" style="color: ${priorityColors[task.priority]};"></i> ${priorityLabels[task.priority]}</span>
-                                <span><i class="fas fa-clock"></i> ${new Date(task.createdAt).toLocaleDateString('fr-FR')}</span>
-                            </div>
-                        </div>
-                        <button class="delete-task" data-id="${task.id}" style="padding: 1rem 1.5rem; border-radius: 1rem; border: 2px solid #ff4444; background: transparent; color: #ff4444; cursor: pointer; transition: all 0.3s ease;">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                `;
-            }
-
-            updateStats() {
-                const total = this.tasks.length;
-                const completed = this.tasks.filter(task => task.completed).length;
-                const pending = total - completed;
-
-                document.getElementById('total-tasks').textContent = total;
-                document.getElementById('completed-tasks').textContent = completed;
-                document.getElementById('pending-tasks').textContent = pending;
-            }
-        }
-
-        // Initialize Task Manager
-        const taskManager = new TaskManager();
-    </script>
-
-    <script src="/static/js/script.js"></script>
 </body>
 </html>
 {{ end }}
-
-
