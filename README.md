@@ -1,5 +1,5 @@
 #  Portfolio YBoost - Hugo Paulier
-## JE SUIS AVEC SINGE EVAN SEDDA ET SON SHELL PT
+## Je suis en Binome avec EVAN SEDDA, suite à des problèmmes de configurations.
 Portfolio personnel développé dans le cadre du projet YBoost en B1 à YNOV Campus Aix-En-Provence.
 
 **🔗 Application en ligne** : https://portfolio-bastou.osc-fr1.scalingo.io/
